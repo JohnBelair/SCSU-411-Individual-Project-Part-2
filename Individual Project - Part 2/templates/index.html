@@ -1,0 +1,58 @@
+<html>
+
+<head>
+    <title>Welcome to the Movie Database!</title>
+</head>
+
+<body>
+    <h1>Welcome to the Movie Database!</h1>
+
+    <!-- Div to Genrate Genre -->
+    <div id="genGenre">
+        <h2>Add Genre</h2>
+        <button id="addGenreButton" onclick="addGenres()">Add Random Genre</button>
+    </div>
+
+    <!-- Div to Genrate Director -->
+    <div id="genDirector">
+        <h2>Add Director</h2>
+        <button id="addDirectorButton" onclick="addDirectors()">Add Random Director</button>
+    </div>
+
+    <!-- Div to Genrate Actor -->
+    <div id="genActor">
+        <h2>Add Actor</h2>
+        <button id="addActorButton" onclick="addActors()">Add Random Actor</button>
+    </div>
+
+    <!-- Div to Genrate Movies -->
+    <div id="genMovie">
+        <h2>Add Multiple Movies</h2>
+        <input type="text" id="numberOfMovies" placeholder="Number of Movies">
+        <button onclick="addMovies()">Generate Movies</button>
+        <p id="addedMoviesMessage"></p>
+    </div>
+
+    <!-- Div to Search Movies By Year -->
+    <div id="searchMovie">
+        <h2>Search Movies By Year</h2>
+        <input type="text" id="movieYear" placeholder="Release Year">
+        <button onclick="searchYear()">Search</button>
+        <p id="moviesFoundByYearMessage"></p>
+        <p id="executionTimeByYear"></p>
+    </div>
+
+    <!-- Div to Search Movies By Year Range -->
+    <div id="searchMovieRange">
+        <h2>Search Movies By Year Range</h2>
+        <input type="text" id="startYear" placeholder="Starting Year">
+        <input type="text" id="endYear" placeholder="Ending Year">
+        <button onclick="searchYearRange()">Search</button>
+        <p id="moviesFoundByYearRangeMessage"></p>
+        <p id="executionTimeByYearRange"></p>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
