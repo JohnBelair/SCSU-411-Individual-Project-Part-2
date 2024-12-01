@@ -1,0 +1,72 @@
+<!--  
+CSCI 411
+Database Theory and Design
+
+file index.html
+
+This program is the framework of the website. 
+It includes a title welcoming the user to the website.
+Some buttons that call methods in the script.js file.
+And some textboxes that allow the used to enter values
+to return to the methods in the script.js file.
+-->
+
+
+<html>
+
+<head>
+    <title>Welcome to the Movie Database!</title> <!-- title for the website -->
+</head>
+
+<body>
+    <h1>Welcome to the Movie Database!</h1>
+
+    <!-- Div to Genrate Genre -->
+    <div id="genGenre">
+        <h2>Add Genre</h2>  <!-- title for the div -->
+        <button id="addGenreButton" onclick="addGenres()">Add Random Genre</button> <!-- button that calls the addGenres() method in the script.js file -->
+    </div>
+
+    <!-- Div to Genrate Director -->
+    <div id="genDirector">
+        <h2>Add Director</h2> <!-- title for the div -->
+        <button id="addDirectorButton" onclick="addDirectors()">Add Random Director</button> <!-- button that calls the addDirectors() method in the script.js file -->
+    </div>
+
+    <!-- Div to Genrate Actor -->
+    <div id="genActor">
+        <h2>Add Actor</h2> <!-- title for the div -->
+        <button id="addActorButton" onclick="addActors()">Add Random Actor</button> <!-- button that calls the addActors() method in the script.js file -->
+    </div>
+
+    <!-- Div to Genrate Movies -->
+    <div id="genMovie">
+        <h2>Add Multiple Movies</h2> <!-- title for the div --> 
+        <input type="text" id="numberOfMovies" placeholder="Number of Movies"> <!-- textbox that returns numberOfMovies to the script.js file -->
+        <button onclick="addMovies()">Generate Movies</button> <!-- button that calls the addMovies() method in the script.js file -->
+        <p id="addedMoviesMessage"></p> <!-- message that indicates how many movies have been added to the database -->
+    </div>
+
+    <!-- Div to Search Movies By Year -->
+    <div id="searchMovie">
+        <h2>Search Movies By Year</h2> <!-- title for the div -->
+        <input type="text" id="movieYear" placeholder="Release Year"> <!-- textbox that returns movieYear to the script.js file -->
+        <button onclick="searchYear()">Search</button> <!-- button that calls the searchYear() method in the script.js file -->
+        <p id="moviesFoundByYearMessage"></p> <!-- message that indicates how many movies have been found in the database -->
+        <p id="executionTimeByYear"></p> <!-- message that indicates how long it took to find the movies in the database -->
+    </div>
+
+    <!-- Div to Search Movies By Year Range -->
+    <div id="searchMovieRange">
+        <h2>Search Movies By Year Range</h2> <!-- title for the div -->
+        <input type="text" id="startYear" placeholder="Starting Year"> <!-- textbox that returns startYear to the script.js file -->
+        <input type="text" id="endYear" placeholder="Ending Year"> <!-- textbox that returns endYear to the script.js file -->
+        <button onclick="searchYearRange()">Search</button>  <!-- button that calls the searchYearRange() method in the script.js file -->
+        <p id="moviesFoundByYearRangeMessage"></p> <!-- message that indicates how many movies have been found in the database -->
+        <p id="executionTimeByYearRange"></p> <!-- message that indicates how long it took to find the movies in the database -->
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script> <!-- refrence to the script file used by the website to prefrom it's actions -->
+</body>
+
+</html>
